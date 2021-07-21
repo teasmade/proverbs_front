@@ -1,3 +1,22 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1080px;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(245, 242, 238);
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto Slab', serif;
 }
