@@ -39,3 +39,9 @@
   margin-top: 0.5rem;
   font-style: italic;
 }
+
+.proverbFootWrapper {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
