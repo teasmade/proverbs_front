@@ -1,1 +1,27 @@
+.nav {
+  font-family: 'Roboto Slab', serif;
 
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  text-align: right;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 15px;
+  min-width: 4rem;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+}
+
+.nav a:hover {
+  opacity: 0.7;
+  box-shadow: 0px 15px 20px rgba(226, 226, 226, 0.4);
+  transform: translateY(-3px);
+}

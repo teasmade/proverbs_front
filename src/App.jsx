@@ -3,12 +3,16 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Nav from './components/nav/Nav';
 
+import './App.css';
+
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
-        <Nav />
+        <div className="headWrapper">
+          <Header />
+          <Nav />
+        </div>
         <main>
           <Switch>
             <Route exact path="/">
