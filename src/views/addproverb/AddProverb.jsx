@@ -1,6 +1,8 @@
 import { useReducer, useState } from 'react';
 import classes from './AddProverb.module.css';
 
+const axios = require('axios');
+
 const formReducer = (state, event) => {
   if (event.reset) {
     return {
@@ -23,8 +25,21 @@ const AddProverb = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setSubmitting(true);
-    alert('You have submitted the form.');
-    console.log(formData);
+    const createProverbEndpoint = {
+      method: 'post',
+      url: 'http://localhost:8080/api/proverbs/',
+      data: {
+        orig_lang: formData.lang,
+        proverb_text: formData.text,
+        proverb_date: formData.date,
+        proverb_author: formData.name,
+      },
+    };
+    // TODO: best practice for response conf. and error handling on front-end post?
+    axios(createProverbEndpoint).catch((error) => {
+      console.error('Error writing to remote DB:', error);
+    });
+    // TODO: change the alert, remove the timeour, remove the form data feedback
     setTimeout(() => {
       setSubmitting(false);
       setFormData({ reset: true });
