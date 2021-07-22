@@ -5,6 +5,7 @@ import LangContext from './context/LangContext';
 import Header from './components/layout/Header';
 import Nav from './components/nav/Nav';
 import Home from './views/home/Home';
+import AddProverb from './views/addproverb/AddProverb';
 
 import './App.css';
 
@@ -26,7 +27,7 @@ function App() {
                 <Home />
               </Route>
               <Route exact path="/add">
-                <h2>Im add a proverb</h2>
+                <AddProverb />
               </Route>
             </Switch>
           </main>

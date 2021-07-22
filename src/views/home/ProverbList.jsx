@@ -9,15 +9,19 @@ const ProverbList = (props) => {
   const { lang } = props;
   const [proverbData, setProverbData] = useState(null);
 
-  const endpoint = {
+  const proverbsEndpoint = {
     method: 'get',
     url: `http://localhost:8080/api/proverbs`,
   };
 
   useEffect(() => {
-    axios(endpoint).then((response) => {
-      setProverbData(response.data);
-    });
+    axios(proverbsEndpoint)
+      .then((response) => {
+        setProverbData(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching from remote DB:', error);
+      });
   }, []);
 
   return (
@@ -50,9 +54,8 @@ const ProverbList = (props) => {
                   </>
                 );
               })
-          : 'loading proverbs..'}
+          : 'loading proverbs...'}
       </div>
-      <div>{lang}</div>
     </div>
   );
 };
