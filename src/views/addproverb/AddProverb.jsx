@@ -41,7 +41,6 @@ const AddProverb = () => {
     axios(createProverbEndpoint).catch((error) => {
       console.error('Error writing to remote DB:', error);
     });
-    // TODO: change the alert, remove the timeour, remove the form data feedback
     setTimeout(() => {
       setSubmitting(false);
       setFormData({ reset: true });
@@ -64,7 +63,9 @@ const AddProverb = () => {
       </h2>
       {submitting && (
         <div>
-          <h2>Sending your proverb... thanks for contributing</h2>
+          <h2 className={classes.submitting}>
+            Sending your proverb... thanks for contributing
+          </h2>
         </div>
       )}
       <form className={classes.proverbForm} onSubmit={handleSubmit}>

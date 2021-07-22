@@ -5,8 +5,9 @@ import classes from './Proverb.module.css';
 // a function to take each space seperated word of a string and randomly assign a span with some css to it
 const fancify = (text) => {
   return text.split(' ').map((word) =>
-    word.length > 2 && Math.random() > 0.6 ? (
+    word.length > 2 && Math.random() > 0.65 ? (
       <span
+        key={word + Math.random()}
         style={{
           transform: `rotate(${
             Math.floor(Math.random() * 5) * (Math.round(Math.random()) ? 1 : -1)

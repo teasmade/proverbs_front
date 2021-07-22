@@ -38,6 +38,7 @@ const OneProverb = (props) => {
         })
       )
       .catch((error) => {
+        // TODO: best practice for response conf. and error handling on front-end post?
         console.error('Error fetching from remote DB:', error);
       });
   }, []);
@@ -46,7 +47,11 @@ const OneProverb = (props) => {
     <div>
       {oneProverbData && translationsData ? (
         <>
-          <Proverb proverbItem={oneProverbData} proverbUse="single" />
+          <Proverb
+            className={classes.oneProverb}
+            proverbItem={oneProverbData}
+            proverbUse="single"
+          />
           {translationsData[0].emptyMessage ? (
             <div className={classes.noneWrapper}>
               <h2 className={classes.noneTitle}>

@@ -21,6 +21,7 @@ const ProverbList = (props) => {
         setProverbData(response.data);
       })
       .catch((error) => {
+        // TODO: best practice for response conf. and error handling on front-end post?
         console.error('Error fetching from remote DB:', error);
       });
   }, []);

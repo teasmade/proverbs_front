@@ -26,6 +26,7 @@ const AddTranslation = (props) => {
         setOneProverbData(response.data);
       })
       .catch((error) => {
+        // TODO: best practice for response conf. and error handling on front-end post?
         console.error('Error fetching from remote DB:', error);
       });
   }, []);
@@ -70,7 +71,6 @@ const AddTranslation = (props) => {
     axios(createTranslationEndpoint).catch((error) => {
       console.error('Error writing to remote DB:', error);
     });
-    // TODO: change the alert, remove the timeour, remove the form data feedback
     setTimeout(() => {
       setSubmitting(false);
       setFormData({ reset: true });
@@ -99,7 +99,9 @@ const AddTranslation = (props) => {
           <Proverb proverbItem={oneProverbData} />
           {submitting && (
             <div>
-              <h2>Sending your translation... thanks for contributing</h2>
+              <h2 className={classes.submitting}>
+                Sending your translation... thanks for contributing
+              </h2>
             </div>
           )}
           <form className={classes.proverbForm} onSubmit={handleSubmit}>
