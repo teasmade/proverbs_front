@@ -37,7 +37,13 @@ const ProverbList = (props) => {
                 return 0.5 - Math.random();
               })
               .map((proverbItem) => {
-                return <Proverb proverbItem={proverbItem} proverbUse="multi" />;
+                return (
+                  <Proverb
+                    key={proverbItem.id}
+                    proverbItem={proverbItem}
+                    proverbUse="multi"
+                  />
+                );
               })
           : 'loading proverbs...'}
       </div>

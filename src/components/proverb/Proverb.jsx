@@ -7,21 +7,21 @@ const Proverb = (props) => {
 
   return (
     <div key={proverbItem.id}>
-      <div className={classes.proverb}>
+      <div className={classes.card}>
         <p className={classes.text}>{proverbItem.proverb_text}</p>
         <div className={classes.byLine}>
           <p className={classes.author}>{proverbItem.proverb_author}</p>
           <p className={classes.date}>{proverbItem.proverb_date}</p>
         </div>
         <div className={classes.proverbFootWrapper}>
-          <div>Ratings go here</div>
           {proverbUse === 'multi' ? (
-            <Link to={`/proverbs/${proverbItem.id}`}>
-              <span>Click for translations...</span>
+            <Link
+              className={classes.endLine}
+              to={`/proverbs/${proverbItem.id}`}
+            >
+              <span>SEE TRANSLATIONS</span>
             </Link>
-          ) : (
-            'TODO: Add your own translation'
-          )}
+          ) : null}
         </div>
       </div>
     </div>

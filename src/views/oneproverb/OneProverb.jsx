@@ -32,8 +32,6 @@ const OneProverb = (props) => {
         axios.spread((...responses) => {
           const proverbResponse = responses[0];
           const translationsResponse = responses[1];
-          console.log(proverbResponse);
-          console.log(translationsResponse);
           setOneProverbData(proverbResponse.data);
           setTranslationsData(translationsResponse.data);
         })
@@ -55,7 +53,7 @@ const OneProverb = (props) => {
               </span>
             </div>
           ) : (
-            <TranslationList translations={translationsData} />
+            <TranslationList id={id} translations={translationsData} />
           )}
         </>
       ) : (

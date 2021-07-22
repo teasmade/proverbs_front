@@ -1,0 +1,44 @@
+.listTitle {
+  font-size: 0.75rem;
+  padding: 10px;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.listTitle h2 {
+  margin-bottom: 0.5rem;
+}
+
+.transWrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.addLink {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-align: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  color: black;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  border: 1px solid rgb(241, 241, 241, 0);
+}
+
+.addLink:hover {
+  opacity: 0.85;
+  box-shadow: 0px 15px 20px rgba(226, 226, 226, 0.4);
+  border: 1px solid rgb(202, 202, 202);
+  transform: translateY(-3px);
+}
+
+.addLink span::after {
+  display: inline;
+  font-size: 1.5rem;
+  content: ' >';
+}
