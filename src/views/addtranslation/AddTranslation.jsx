@@ -54,11 +54,12 @@ const AddTranslation = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setSubmitting(true);
+    const lang = oneProverbData.orig_lang === 'EN' ? 'FR' : 'EN';
     const createTranslationEndpoint = {
       method: 'post',
       url: 'http://localhost:8080/api/translations/',
       data: {
-        trans_lang: formData.lang,
+        trans_lang: lang,
         trans_text: formData.text,
         trans_date: formData.date,
         trans_author: formData.name,
