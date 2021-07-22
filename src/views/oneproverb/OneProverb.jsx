@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-// import classes from './OneProverb.module.css';
+import { Link } from 'react-router-dom';
+import classes from './OneProverb.module.css';
 import Proverb from '../../components/proverb/Proverb';
 import TranslationList from './TranslationList';
 
@@ -47,10 +48,13 @@ const OneProverb = (props) => {
         <>
           <Proverb proverbItem={oneProverbData} proverbUse="single" />
           {translationsData[0].emptyMessage ? (
-            <div>
-              <span>
-                No translations found for this proverb - why not add some?
-              </span>
+            <div className={classes.noneWrapper}>
+              <h2 className={classes.noneTitle}>
+                No translations found for this proverb...
+              </h2>
+              <Link className={classes.addLink} to={`/translations/add/${id}`}>
+                <span>Why not add one here</span>
+              </Link>
             </div>
           ) : (
             <TranslationList id={id} translations={translationsData} />
