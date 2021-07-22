@@ -124,7 +124,7 @@ const AddProverb = () => {
             />
           </label>
         </fieldset>
-        <button type="submit">Submit</button>
+        <button type="submit">SUBMIT</button>
       </form>
     </div>
   );
