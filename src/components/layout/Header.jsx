@@ -7,7 +7,19 @@ const Header = () => {
         <a href="/">
           <h1>Mots to Go</h1>
         </a>
-        <h2>SENTENCING PHRASES SINCE 1789</h2>
+        <h2>
+          SENTENCING{' '}
+          <span
+            style={{
+              transform: 'rotate(4deg)',
+              color: 'red',
+              display: 'inline-block',
+            }}
+          >
+            PHRASES
+          </span>{' '}
+          SINCE 1789
+        </h2>
       </header>
     </div>
   );

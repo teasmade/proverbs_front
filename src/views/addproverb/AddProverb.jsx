@@ -68,48 +68,50 @@ const AddProverb = () => {
         </div>
       )}
       <form className={classes.proverbForm} onSubmit={handleSubmit}>
-        <fieldset disabled={submitting}>
-          <label htmlFor="lang">
-            <p>Language</p>
-            <select
-              name="lang"
-              id="lang"
-              onChange={handleChange}
-              value={formData.lang || ''}
-              required
-            >
-              <option value="" disabled>
-                -
-              </option>
-              <option value="EN">English</option>
-              <option value="FR">Français</option>
-            </select>
-          </label>
-        </fieldset>
-        <fieldset disabled={submitting}>
-          <label htmlFor="name">
-            <p>Author Name</p>
-            <input
-              name="name"
-              id="name"
-              onChange={handleChange}
-              value={formData.name || ''}
-              required
-            />
-          </label>
-        </fieldset>
-        <fieldset disabled={submitting}>
-          <label htmlFor="date">
-            <p>Proverb Date</p>
-            <input
-              name="date"
-              id="date"
-              onChange={handleChange}
-              value={formData.date || ''}
-              required
-            />
-          </label>
-        </fieldset>
+        <div className={classes.innerFormWrapper}>
+          <fieldset disabled={submitting}>
+            <label htmlFor="lang">
+              <p>Language</p>
+              <select
+                name="lang"
+                id="lang"
+                onChange={handleChange}
+                value={formData.lang || ''}
+                required
+              >
+                <option value="" disabled>
+                  -
+                </option>
+                <option value="EN">English</option>
+                <option value="FR">Français</option>
+              </select>
+            </label>
+          </fieldset>
+          <fieldset disabled={submitting}>
+            <label htmlFor="name">
+              <p>Author Name</p>
+              <input
+                name="name"
+                id="name"
+                onChange={handleChange}
+                value={formData.name || ''}
+                required
+              />
+            </label>
+          </fieldset>
+          <fieldset disabled={submitting}>
+            <label htmlFor="date">
+              <p>Proverb Date</p>
+              <input
+                name="date"
+                id="date"
+                onChange={handleChange}
+                value={formData.date || ''}
+                required
+              />
+            </label>
+          </fieldset>
+        </div>
         <fieldset disabled={submitting}>
           <label htmlFor="text">
             <p>Proverb Text</p>

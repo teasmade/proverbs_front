@@ -13,7 +13,7 @@ import './App.css';
 
 function App() {
   // default state for the context
-  const lang = useState('en');
+  const lang = useState('BOTH');
 
   return (
     <LangContext.Provider value={lang}>

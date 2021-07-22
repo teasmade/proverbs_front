@@ -17,6 +17,9 @@ const Home = () => {
             value={lang}
             onChange={(e) => setLang(e.target.value)}
           >
+            <option value="BOTH" selected>
+              EN + FR
+            </option>
             <option value="EN">English</option>
             <option value="FR">Français</option>
           </select>

@@ -1,6 +1,6 @@
 .headWrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 1rem;
 }
 
@@ -10,4 +10,5 @@ select,
 textarea {
   font-family: inherit;
   font-size: 75%;
+  font-style: italic;
 }

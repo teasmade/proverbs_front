@@ -31,7 +31,10 @@ const ProverbList = (props) => {
         {proverbData
           ? proverbData
               // filter data by language from context
-              .filter((proverb) => proverb.orig_lang === lang.toUpperCase())
+              .filter(
+                (proverb) =>
+                  proverb.orig_lang === lang.toUpperCase() || lang === 'BOTH'
+              )
               // sort randomly each time loaded
               .sort(() => {
                 return 0.5 - Math.random();

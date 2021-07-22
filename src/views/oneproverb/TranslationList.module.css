@@ -37,7 +37,7 @@
   transform: translateY(-3px);
 }
 
-.addLink span::after {
+.lastSpan::after {
   display: inline;
   font-size: 1.5rem;
   content: ' >';

@@ -1,6 +1,22 @@
 .proverbsWrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   font-family: 'Roboto Slab', serif;
+}
+
+.proverbsWrapper > * {
+  width: 45%;
+}
+
+@media (max-width: 967px) {
+  .proverbsWrapper {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .proverbsWrapper > * {
+    width: unset;
+  }
 }
