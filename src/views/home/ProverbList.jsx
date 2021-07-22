@@ -2,6 +2,7 @@
 /* eslint-disable indent */
 import { useEffect, useState } from 'react';
 import classes from './ProverbList.module.css';
+import Proverb from '../../components/proverb/Proverb';
 
 const axios = require('axios');
 
@@ -35,24 +36,8 @@ const ProverbList = (props) => {
               .sort(() => {
                 return 0.5 - Math.random();
               })
-              .map((proverb) => {
-                return (
-                  <>
-                    <div className={classes.proverb}>
-                      <p className={classes.text}>{proverb.proverb_text}</p>
-                      <div className={classes.byLine}>
-                        <p className={classes.author}>
-                          {proverb.proverb_author}
-                        </p>
-                        <p className={classes.date}>{proverb.proverb_date}</p>
-                      </div>
-                      <div className={classes.proverbFootWrapper}>
-                        <div>Ratings go here</div>
-                        <div>Link to translations</div>
-                      </div>
-                    </div>
-                  </>
-                );
+              .map((proverbItem) => {
+                return <Proverb proverbItem={proverbItem} proverbUse="multi" />;
               })
           : 'loading proverbs...'}
       </div>

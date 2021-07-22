@@ -6,6 +6,7 @@ import Header from './components/layout/Header';
 import Nav from './components/nav/Nav';
 import Home from './views/home/Home';
 import AddProverb from './views/addproverb/AddProverb';
+import OneProverb from './views/oneproverb/OneProverb';
 
 import './App.css';
 
@@ -23,6 +24,7 @@ function App() {
           </div>
           <main>
             <Switch>
+              <Route path="/proverbs/:id" component={OneProverb} />
               <Route exact path="/">
                 <Home />
               </Route>
