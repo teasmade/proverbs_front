@@ -1,4 +1,5 @@
 import { useReducer, useState } from 'react';
+import { Redirect } from 'react-router';
 import classes from './AddProverb.module.css';
 
 const axios = require('axios');
@@ -21,6 +22,7 @@ const formReducer = (state, event) => {
 const AddProverb = () => {
   const [formData, setFormData] = useReducer(formReducer, {});
   const [submitting, setSubmitting] = useState(false);
+  const [redirect, setRedirect] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -43,6 +45,7 @@ const AddProverb = () => {
     setTimeout(() => {
       setSubmitting(false);
       setFormData({ reset: true });
+      setRedirect(true);
     }, 3000);
   };
 
@@ -55,19 +58,13 @@ const AddProverb = () => {
 
   return (
     <div>
+      {redirect ? <Redirect to="/" /> : null}
       <h2 className={classes.title}>
         Add your Words of Wisdom to the Site here...
       </h2>
       {submitting && (
         <div>
-          You are submitting the following:
-          <ul>
-            {Object.entries(formData).map(([name, value]) => (
-              <li key={name}>
-                <strong>{name}</strong>:{value.toString()}
-              </li>
-            ))}
-          </ul>
+          <h2>Sending your proverb... thanks for contributing</h2>
         </div>
       )}
       <form className={classes.proverbForm} onSubmit={handleSubmit}>
