@@ -18,12 +18,12 @@ const OneProverb = (props) => {
 
   const oneProverbEndpoint = {
     method: 'get',
-    url: `http://localhost:8080/api/proverb/${id}`,
+    url: `${process.env.REACT_APP_BACKEND_URL}/api/proverb/${id}`,
   };
 
   const proverbTranslationsEndpoint = {
     method: 'get',
-    url: `http://localhost:8080/api/proverbtranslations/${id}`,
+    url: `${process.env.REACT_APP_BACKEND_URL}/api/proverbtranslations/${id}`,
   };
 
   useEffect(() => {

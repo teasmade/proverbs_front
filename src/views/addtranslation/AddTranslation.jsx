@@ -18,7 +18,7 @@ const AddTranslation = (props) => {
   const [oneProverbData, setOneProverbData] = useState(null);
   const oneProverbEndpoint = {
     method: 'get',
-    url: `http://localhost:8080/api/proverb/${id}`,
+    url: `${process.env.REACT_APP_BACKEND_URL}/api/proverb/${id}`,
   };
   useEffect(() => {
     axios(oneProverbEndpoint)
@@ -58,7 +58,7 @@ const AddTranslation = (props) => {
     const lang = oneProverbData.orig_lang === 'EN' ? 'FR' : 'EN';
     const createTranslationEndpoint = {
       method: 'post',
-      url: 'http://localhost:8080/api/translations/',
+      url: `${process.env.REACT_APP_BACKEND_URL}/api/translations/`,
       data: {
         trans_lang: lang,
         trans_text: formData.text,
