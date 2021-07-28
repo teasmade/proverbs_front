@@ -5,7 +5,20 @@ const Header = () => {
     <div>
       <header className={classes.header}>
         <a href="/">
-          <h1>Mots to Go</h1>
+          <h1>
+            Mots{' '}
+            <span
+              style={{
+                transform: 'rotate(-3deg)',
+                color: 'red',
+                fontSize: '3.75rem',
+                display: 'inline-block',
+              }}
+            >
+              2
+            </span>{' '}
+            Go
+          </h1>
         </a>
         <h2>
           SENTENCING{' '}

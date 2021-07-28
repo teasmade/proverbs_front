@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import classes from './Proverb.module.css';
@@ -25,7 +26,8 @@ const fancify = (text) => {
   );
 };
 
-const Proverb = (props) => {
+// memoized component to prevent re-renders in add translation form view.
+const Proverb = React.memo(function Proverb(props) {
   const { proverbItem, proverbUse } = props;
 
   const specialText = fancify(proverbItem.proverb_text);
@@ -51,6 +53,6 @@ const Proverb = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default Proverb;
