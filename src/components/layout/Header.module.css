@@ -22,3 +22,9 @@
   padding-left: 5px;
   padding-right: 15px;
 }
+
+@media (max-width: 460px) {
+  .header {
+    box-shadow: -15px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+}

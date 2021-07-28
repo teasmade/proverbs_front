@@ -33,3 +33,10 @@
   font-size: 1.5rem;
   content: ' >';
 }
+
+@media (max-width: 460px) {
+  .nav {
+    min-width: 75px;
+    box-shadow: none;
+  }
+}
