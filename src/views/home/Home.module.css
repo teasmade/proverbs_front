@@ -1,0 +1,20 @@
+.langWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.langWrapper > * {
+  padding: 10px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.langWrapper select {
+  font-family: 'Roboto Slab', serif;
+
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: bold;
+  background-color: transparent;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+}
