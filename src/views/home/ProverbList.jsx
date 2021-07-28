@@ -2,6 +2,7 @@
 /* eslint-disable indent */
 import { useEffect, useState } from 'react';
 import classes from './ProverbList.module.css';
+import Proverb from '../../components/proverb/Proverb';
 
 const axios = require('axios');
 
@@ -20,6 +21,7 @@ const ProverbList = (props) => {
         setProverbData(response.data);
       })
       .catch((error) => {
+        // TODO: best practice for response conf. and error handling on front-end post?
         console.error('Error fetching from remote DB:', error);
       });
   }, []);
@@ -30,28 +32,21 @@ const ProverbList = (props) => {
         {proverbData
           ? proverbData
               // filter data by language from context
-              .filter((proverb) => proverb.orig_lang === lang.toUpperCase())
+              .filter(
+                (proverb) =>
+                  proverb.orig_lang === lang.toUpperCase() || lang === 'BOTH'
+              )
               // sort randomly each time loaded
               .sort(() => {
                 return 0.5 - Math.random();
               })
-              .map((proverb) => {
+              .map((proverbItem) => {
                 return (
-                  <>
-                    <div className={classes.proverb}>
-                      <p className={classes.text}>{proverb.proverb_text}</p>
-                      <div className={classes.byLine}>
-                        <p className={classes.author}>
-                          {proverb.proverb_author}
-                        </p>
-                        <p className={classes.date}>{proverb.proverb_date}</p>
-                      </div>
-                      <div className={classes.proverbFootWrapper}>
-                        <div>Ratings go here</div>
-                        <div>Link to translations</div>
-                      </div>
-                    </div>
-                  </>
+                  <Proverb
+                    key={proverbItem.id}
+                    proverbItem={proverbItem}
+                    proverbUse="multi"
+                  />
                 );
               })
           : 'loading proverbs...'}
