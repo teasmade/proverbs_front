@@ -29,7 +29,7 @@ const AddProverb = () => {
     setSubmitting(true);
     const createProverbEndpoint = {
       method: 'post',
-      url: 'http://localhost:8080/api/proverbs/',
+      url: `${process.env.REACT_APP_BACKEND_URL}/api/proverbs/`,
       data: {
         orig_lang: formData.lang,
         proverb_text: formData.text,

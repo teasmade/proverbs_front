@@ -12,7 +12,7 @@ const ProverbList = (props) => {
 
   const proverbsEndpoint = {
     method: 'get',
-    url: `http://localhost:8080/api/proverbs`,
+    url: `${process.env.REACT_APP_BACKEND_URL}/api/proverbs`,
   };
 
   useEffect(() => {
